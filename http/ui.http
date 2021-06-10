@@ -1,0 +1,10 @@
+### OK 해당하는 회원의 코스를 등록한다.
+POST http://localhost:8080/ui
+Content-Type: application/json
+
+{
+  "name": "test",
+  "age" : "15",
+  "date" : "2020-01-05",
+  "dateTime" : "2020-05-08T15:15:30"
+}

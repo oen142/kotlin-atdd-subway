@@ -9,23 +9,19 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class AcceptanceTest(
+class AcceptanceTest {
     @LocalServerPort
-    val port: Int,
-
-    @Autowired
-    val databaseCleanup: DatabaseCleanup
-
-) {
+    private val port: Int = 0
+    private val databaseCleanup: DatabaseCleanup? = null
 
     @BeforeEach
     fun setUp() {
         RestAssured.port = port
-        databaseCleanup.execute()
+        databaseCleanup?.execute()
     }
 
     @Test
-    fun `테스트`(){
+    fun `테스트`() {
         println("port = ${port}")
 
     }
